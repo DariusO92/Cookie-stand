@@ -1,6 +1,7 @@
 'use strict';
 let hours = ['6am','7am', '8am', '9am', '10am', '11am', '12pm', '1pm','2pm','3pm', '4pm', '5pm' ,'6pm', '7pm'];
 let table = document.getElementById('salesT');
+let myForm = document.getElementById('Cookie-Shop');
 // *** HELPER FUNCTION THAT WILL GENERATE A RANDOM AGE ***
 function random(min, max){
   // grabbed from MDN documentation
@@ -76,10 +77,27 @@ let headerTable = function(){
     let total = document.createElement('th');
     total.textContent = 'total sales';
     tableHeaderRow.appendChild(total);
+}
+
+
+
+
+
+  function handleSubmit(event){
+  event.preventDefault();
+
+  let name = event.target.Name.value;
+  let minCustomer = number(event.target.minCustomer.value);
+  let maxCustomer = number(event.target.maxCustomer.value);
+  let avgCookieSale = number(event.target.avgCookieSale.value);
+
+  let newCookieShop = new CookieShop(name, minCustomer, maxCustomer, avgCookieSale);
 
 
 }
-  
+
+
+
 
 new CookieShop('seattle', '23', '65', '6.3');
 new CookieShop('tokyo', '3', '24', '1.2');
@@ -89,17 +107,19 @@ new CookieShop('lima', '2', '16', '4.6');
 
 function renderAllCookieShops(){
   for(let i = 0; i < cookieshops.length; i++){
-
+    
     cookieshops[i].render(); 
   }
 };  
 
 renderAllCookieShops();
 headerTable();
+Cookie-Shop.addEventListener('submit', handleSubmit);
+newCookieShop()
 
 
 
- //let seattleCookieShop ={
+//let seattleCookieShop ={
 //   name: 'seattle',
 //   minCustomer: 23,
 //   maxCustomer: 65,
