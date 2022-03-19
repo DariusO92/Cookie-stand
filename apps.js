@@ -99,8 +99,9 @@ let headerTable = function(){
   let maxCustomer = +event.target.maxCustomer.value;
   let avgCookieSale = +event.target.avgCookieSale.value;
 
-  let newCookieShop = new CookieShop(name, minCustomer, maxCustomer, avgCookieSale);
-
+  let newShopForm = document.getElementById('NewCookieShop')(name, minCustomer, maxCustomer, avgCookieSale);
+  let newCookieShop = document.createElement('tr');
+table.appendChild(newCookieShop);
 
 }
 
@@ -115,15 +116,15 @@ new CookieShop('lima', '2', '16', '4.6');
 
 function renderAllCookieShops(){
   for(let i = 0; i < cookieshops.length; i++){
-    
     cookieshops[i].render(); 
   }
-};  
-cookiesEachHour()
+};
+
+cookiesEachHour();
 renderAllCookieShops();
 headerTable();
-// Cookie-Shop.addEventListener('submit', handleSubmit);
-newCookieShop()
+newShopForm.addEventListener('submit', handleSubmit);
+newCookieShop();
 
 
 

@@ -1,19 +1,30 @@
 * {font-family: 'Playfair Display', serif;
 }
 
-body { background-color: grey;
+body { background-color: rgb(216, 214, 214);
 }
 
+body p {
+  background-color: aliceblue;
+  font-size: 25px;
+  padding-bottom: 15px;
+  margin-right: 15px;
+}
+
+table p {
+  background-color: salmon;
+  font-size: 35px;
+}
 
 h1 {
-  font-size: 2.5vw;
+  font-size: 40px;
   text-align: center;
   text-decoration: underline;
   margin-bottom: 50px;
 }
 
 h2 {
-  font-size: 1.5vw;
+  font-size: 25px;
 }
 
 
@@ -22,8 +33,17 @@ ul {
   list-style-position: inside;
 }
 
+div {
+  display:inline-block;
+  margin: auto;
+  padding: 10px;
+  position:relative;
+}
+
 
 form {
   background-color: cornflowerblue;
   display: block;
 }
+
+* {font-family: 'Press Start 2P', cursive;}
