@@ -1,3 +1,8 @@
+* {font-family: 'Playfair Display', serif;
+}
+
+body { background-color: grey;
+}
 
 
 h1 {
@@ -17,4 +22,8 @@ ul {
   list-style-position: inside;
 }
 
-  
+
+form {
+  background-color: cornflowerblue;
+  display: block;
+}
